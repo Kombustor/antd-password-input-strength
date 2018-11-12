@@ -1,15 +1,26 @@
 {
   "name": "antd-password-input-strength",
+  "author": "Fabian Schliski",
+  "license": "MIT",
   "version": "1.0.0",
-  "description": "AntD Input component with password-strength indicator.",
-  "main": "index.js",
+  "description": "antd Input component with password-strength indicator.",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "coverage": "npm test -- --coverage",
+    "lint": "tslint \"src/**/*.(ts|tsx)\" --type-check --project tsconfig.json",
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "prepare-publish": "npm run lint && npm test && npm run clean && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kombustor/antd-password-input-strength.git"
+  "peerDependencies": {
+    "antd": ">=3",
+    "react": ">=16"
   },
+  "files": [
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
   "keywords": [
     "antd",
     "ant-design",
@@ -18,10 +29,25 @@
     "strength",
     "input"
   ],
-  "author": "Fabian Schliski",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Kombustor/antd-password-input-strength/issues"
   },
-  "homepage": "https://github.com/Kombustor/antd-password-input-strength#readme"
+  "homepage": "https://github.com/Kombustor/antd-password-input-strength#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kombustor/antd-password-input-strength.git"
+  },
+  "dependencies": {
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.5",
+    "@types/react": "^16.7.3",
+    "@types/zxcvbn": "^4.4.0",
+    "antd": "^3.10.7",
+    "react": "^16.6.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
 }
