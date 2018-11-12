@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
-import { PasswordInput, PasswordInputProps, PasswordInputSettings } from '../src'
+import { PasswordInput, PasswordInputSettings } from '../src'
 
 describe('PasswordInput', () => {
 
