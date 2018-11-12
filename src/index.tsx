@@ -3,7 +3,6 @@ import { Input } from "antd";
 import zxcvbn from "zxcvbn";
 import { InputProps } from "antd/lib/input";
 
-// TODO publish
 export class PasswordInput extends React.Component<PasswordInputProps> {
     public static defaultProps: Partial<PasswordInputProps> = {
         settings: {
