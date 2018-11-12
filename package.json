@@ -19,7 +19,8 @@
     "react": ">=16"
   },
   "files": [
-    "lib"
+    "lib",
+    "LICENSE"
   ],
   "types": "lib/index.d.ts",
   "keywords": [
