@@ -15,6 +15,8 @@
 - Customizable
 - Uses [zxcvbn](https://github.com/dropbox/zxcvbn) for password strength estimation
 
+_Note: zxcvbn is a large library. Use code splitting to only load the library when necessary._
+
 ## Install
 
 ```bash
@@ -26,6 +28,8 @@ or
 ```bash
 yarn add --save antd-password-input-strength
 ```
+
+_Note: antd and react/react-dom are peer dependencies. You should only use this library in a React/AntD project._
 
 ## Usage
 
