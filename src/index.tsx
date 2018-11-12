@@ -3,8 +3,8 @@ import { Input } from "antd";
 import zxcvbn from "zxcvbn";
 import { InputProps } from "antd/lib/input";
 
-// TODO testing
-export default class PasswordInput extends React.Component<PasswordInputProps> {
+// TODO publish
+export class PasswordInput extends React.Component<PasswordInputProps> {
     public static defaultProps: Partial<PasswordInputProps> = {
         settings: {
             colorScheme: {

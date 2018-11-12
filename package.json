@@ -11,7 +11,8 @@
     "lint": "tslint \"src/**/*.(ts|tsx)\" --type-check --project tsconfig.json",
     "build": "tsc",
     "clean": "rimraf lib",
-    "prepare-publish": "npm run lint && npm test && npm run clean && npm run build"
+    "prepare-publish": "npm run lint && npm test && npm run clean && npm run build",
+    "publish": "npm run prepare-publish && npm publish --access public"
   },
   "peerDependencies": {
     "antd": ">=3",
@@ -41,12 +42,18 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.9",
     "@types/node": "^10.12.5",
     "@types/react": "^16.7.3",
+    "@types/react-test-renderer": "^16.0.3",
     "@types/zxcvbn": "^4.4.0",
     "antd": "^3.10.7",
+    "jest": "^23.6.0",
     "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-test-renderer": "^16.6.1",
     "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6"
   }

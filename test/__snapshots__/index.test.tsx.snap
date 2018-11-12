@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PasswordInput should render correctly 1`] = `
+<div>
+  <input
+    className="ant-input"
+    disabled={false}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    type="password"
+  />
+</div>
+`;
