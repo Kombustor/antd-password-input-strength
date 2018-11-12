@@ -77,7 +77,7 @@ Or with custom settings:
 ### PasswordInput
 
 | props | type  | description |
-| --    | --    | --        | --            |
+| --    | --    | --        |
 | settings | PasswordInputSettings | Strength indicator display settings |
 | onChange | function(e) {} | Input onChange event |
 | inputProps | [InputProps](https://ant.design/components/input/#Input) | Pass additional properties to the underlying [Input](https://ant.design/components/input/) component
@@ -85,7 +85,7 @@ Or with custom settings:
 ### PasswordInputSettings
 
 | props | type  | description |
-| --    | --    | --        | --            |
+| --    | --    | --        |
 | colorScheme | ColorScheme | Modify the indicator's color scheme |
 | height | number | Change indicator bar height (in px) |
 | alwaysVisible | boolean | If false, the bar only appears if the input field isn't empty |
@@ -103,7 +103,7 @@ Or with custom settings:
 ### ColorScheme
 
 | props | type  | description |
-| --    | --    | --        | --            |
+| --    | --    | --        |
 | levels | string[] | Array of CSS color codes for the different strength levels: <br> `levels[0] = weakest`, `levels[4] = strongest` |
 | noLevel| string | CSS color code for non-colored strength indicator bars. |
 
