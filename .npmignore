@@ -1,0 +1,8 @@
+.git
+npm-debug.log
+src/
+test/
+.gitignore
+jest.config.ts
+tsconfig*.json
+tslint.json
