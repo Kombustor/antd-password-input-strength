@@ -1,0 +1,27 @@
+{
+  "name": "antd-password-input-strength",
+  "version": "1.0.0",
+  "description": "AntD Input component with password-strength indicator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kombustor/antd-password-input-strength.git"
+  },
+  "keywords": [
+    "antd",
+    "ant-design",
+    "css",
+    "password",
+    "strength",
+    "input"
+  ],
+  "author": "Fabian Schliski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kombustor/antd-password-input-strength/issues"
+  },
+  "homepage": "https://github.com/Kombustor/antd-password-input-strength#readme"
+}
