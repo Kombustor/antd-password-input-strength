@@ -11,8 +11,7 @@
     "lint": "tslint \"src/**/*.(ts|tsx)\" --type-check --project tsconfig.json",
     "build": "tsc",
     "clean": "rimraf lib",
-    "prepare-publish": "npm run lint && npm test && npm run clean && npm run build",
-    "publish": "npm run prepare-publish && npm publish --access public"
+    "prepare-publish": "npm run lint && npm test && npm run clean && npm run build"
   },
   "peerDependencies": {
     "antd": ">=3",
