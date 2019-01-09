@@ -34,10 +34,10 @@ export class PasswordInput extends React.Component<PasswordInputProps> {
     };
 
     render() {
-        const { settings, inputProps } = this.props;
+        const { settings, inputProps, ...rest } = this.props;
         return (
             <div>
-                <Input {...inputProps} type="password" onChange={this.onChange} />
+                <Input {...inputProps} type="password" {...rest} onChange={this.onChange} />
                 <PasswordStrengthIndicator
                     level={this.state.level}
                     settings={settings!}
