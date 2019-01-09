@@ -3,6 +3,9 @@ import { Input } from "antd";
 import zxcvbn from "zxcvbn";
 import { InputProps } from "antd/lib/input";
 
+// TODO optimize imports (webpack needed?) for antd
+// TODO different password strength library?
+
 export class PasswordInput extends React.Component<PasswordInputProps> {
     public static defaultProps: Partial<PasswordInputProps> = {
         settings: {
