@@ -52,7 +52,7 @@ workflows:
   version: 2
   test-publish:
     jobs:
-      - test:
+      - test
       - deploy:
           requires:
             - test
