@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - run:
           name: Run lint
-          command: npm lint
+          command: npm run lint
       - run:
           name: Run tests
           command: npm test
