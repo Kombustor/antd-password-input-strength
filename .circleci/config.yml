@@ -54,6 +54,7 @@ jobs:
           name: Build project
           command: npm run build
   publish:
+    # Only runs when the branch is tagged (using git tag v...)
     <<: *defaults
     steps:
       - attach_workspace:
@@ -86,5 +87,7 @@ workflows:
           requires:
             - test
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only: master
+              ignore: /.*/
