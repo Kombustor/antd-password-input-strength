@@ -70,13 +70,13 @@ workflows:
   lint_test_publish:
     jobs:
       - install
-      - lint
+      - lint:
           requires:
             - install
-      - test
+      - test:
           requires:
             - install
-      - build
+      - build:
           requires:
             - install
       - publish:
