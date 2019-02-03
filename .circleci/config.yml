@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  deploy:
+  publish:
     <<: *defaults
     branches:
       only:
@@ -47,3 +47,12 @@ jobs:
       - run:
           name: Publish package
           command: npm publish
+            
+workflows:
+  version: 2
+  test-publish:
+    jobs:
+      - test:
+      - deploy:
+          requires:
+            - test
