@@ -1,7 +1,7 @@
 [![npm](https://img.shields.io/npm/v/antd-password-input-strength.svg)](https://npmjs.org/package/antd-password-input-strength)
 [![GitHub issues](https://img.shields.io/github/issues/Kombustor/antd-password-input-strength.svg)](https://github.com/Kombustor/antd-password-input-strength/issues)
 [![GitHub license](https://img.shields.io/github/license/Kombustor/antd-password-input-strength.svg)](https://github.com/Kombustor/antd-password-input-strength/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/Kombustor/antd-password-input-strength.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FKombustor%2Fantd-password-input-strength)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/Kombustor/antd-password-input-strength.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FKombustor%2Fantd-password-input-strength) [![Greenkeeper badge](https://badges.greenkeeper.io/Kombustor/antd-password-input-strength.svg)](https://greenkeeper.io/)
 
 # antd-password-input-strength
 
