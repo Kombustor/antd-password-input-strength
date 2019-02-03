@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:10.13.0
 
 jobs:
-  lint:
+  install:
     <<: *defaults  
     steps:
       - checkout
@@ -18,10 +18,6 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run:
-          name: Run lint
-          command: npm run lint
-
       - save_cache:
           paths:
             - node_modules
@@ -30,6 +26,15 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
+  lint:
+    <<: *defaults  
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Run lint
+          command: npm run lint
   test:
     <<: *defaults  
     steps:
@@ -64,13 +69,18 @@ workflows:
   version: 2
   lint_test_publish:
     jobs:
+      - install
       - lint
+          requires:
+            - install
       - test
+          requires:
+            - install
       - build
+          requires:
+            - install
       - publish:
           requires:
-            - lint
-            - test
             - build
           filters:
             branches:
