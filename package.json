@@ -9,7 +9,7 @@
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "lint": "tslint \"src/**/*.(ts|tsx)\" --project tsconfig.json --project tsconfig.json",
-    "build": "tsc",
+    "build": "tsc --skipLibCheck",
     "clean": "rimraf lib",
     "prepublish": "npm run lint && npm test && npm run clean && npm run build"
   },
