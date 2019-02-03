@@ -35,9 +35,6 @@ jobs:
           paths: .
   publish:
     <<: *defaults
-    branches:
-      only:
-        - master
     steps:
       - attach_workspace:
           at: ~/repo
@@ -56,3 +53,6 @@ workflows:
       - publish:
           requires:
             - test
+          branches:
+            only:
+              - master
