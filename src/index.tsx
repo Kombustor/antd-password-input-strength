@@ -3,9 +3,6 @@ import { Input } from "antd";
 import zxcvbn from "zxcvbn";
 import { InputProps } from "antd/lib/input";
 
-// TODO optimize imports (webpack needed?) for antd
-// TODO different password strength library?
-
 export class PasswordInput extends React.Component<PasswordInputProps> {
     public static defaultProps: Partial<PasswordInputProps> = {
         settings: {
@@ -37,7 +34,7 @@ export class PasswordInput extends React.Component<PasswordInputProps> {
         const { settings, inputProps, ...rest } = this.props;
         return (
             <div>
-                <Input {...inputProps} type="password" {...rest} onChange={this.onChange} />
+                <Input.Password {...inputProps} {...rest} onChange={this.onChange} />
                 <PasswordStrengthIndicator
                     level={this.state.level}
                     settings={settings!}
@@ -59,7 +56,7 @@ export const PasswordStrengthIndicator = ({ level, settings }: PasswordStrengthI
             i <= level
                 ? settings.colorScheme.levels[level]
                 : settings.colorScheme.noLevel;
-        indicators.push(<div style={getIndicatorStyle(color, settings.height)} />);
+        indicators.push(<div key={`indicator-${i}`} style={getIndicatorStyle(color, settings.height)} />);
     }
 
     return <div style={getWrapperStyle(settings.height)}>{indicators}</div>;
