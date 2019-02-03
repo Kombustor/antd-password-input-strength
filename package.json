@@ -2,7 +2,7 @@
   "name": "antd-password-input-strength",
   "author": "Fabian Schliski",
   "license": "MIT",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "antd Input component with password-strength indicator.",
   "main": "lib/index.js",
   "scripts": {
