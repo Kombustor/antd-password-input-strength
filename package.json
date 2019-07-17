@@ -2,7 +2,7 @@
   "name": "antd-password-input-strength",
   "author": "Fabian Schliski",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "antd Input component with password-strength indicator.",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "clean": "rimraf lib"
   },
   "peerDependencies": {
-    "antd": ">=3.12.0",
+    "antd": ">=3.20.3",
     "react": ">=16"
   },
   "files": [
@@ -41,19 +41,19 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
-    "@types/node": "^12.0.0",
-    "@types/jest": "^24.0.0",
-    "@types/react": "^16.7.3",
-    "@types/react-test-renderer": "^16.0.3",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.6",
+    "@types/react": "^16.8.23",
+    "@types/react-test-renderer": "^16.8.2",
     "@types/zxcvbn": "^4.4.0",
-    "antd": "^3.13.0",
-    "jest": "^24.0.0",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-test-renderer": "^16.6.1",
-    "rimraf": "^2.6.2",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "antd": "^3.20.3",
+    "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   }
 }
