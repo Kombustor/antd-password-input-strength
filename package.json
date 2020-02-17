@@ -46,7 +46,7 @@
     "@types/react": "^16.8.23",
     "@types/react-test-renderer": "^16.8.2",
     "@types/zxcvbn": "^4.4.0",
-    "antd": "^3.20.3",
+    "antd": "^3.26.10",
     "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
