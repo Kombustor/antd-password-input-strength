@@ -52,7 +52,7 @@
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
     "rimraf": "^2.6.3",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.5.1",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }
