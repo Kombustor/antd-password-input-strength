@@ -110,6 +110,7 @@ function ValidationExample() {
 | props | type  | description |
 | --    | --    | --        |
 | settings | PasswordInputSettings | Strength indicator display settings |
+| onLevelChange | (newLevel: 0 | 1 | 2 | 3 | 4) => void | Called when the input level changes |
 | ...props | [InputProps](https://ant.design/components/input/#Input) | Pass additional properties to the underlying [Input](https://ant.design/components/input/) component
 
 ### PasswordInputSettings
