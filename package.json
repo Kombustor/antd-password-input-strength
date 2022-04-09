@@ -2,14 +2,14 @@
   "name": "antd-password-input-strength",
   "author": "Fabian Schliski",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "antd Input component with password-strength indicator.",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "lint": "tslint \"src/**/*.(ts|tsx)\" --project tsconfig.json --project tsconfig.json",
-    "build": "npm run clean && tsc --skipLibCheck",
+    "build": "npm run clean && tsc",
     "clean": "rimraf lib"
   },
   "peerDependencies": {
@@ -54,6 +54,6 @@
     "rimraf": "^2.6.3",
     "ts-jest": "^27.1.4",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "typescript": "^4.6.3"
   }
 }

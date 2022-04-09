@@ -1,8 +1,6 @@
+import { Input, InputProps, InputRef } from "antd";
 import React, { useEffect, useState } from "react";
-import { Form, FormItemProps, Input } from "antd";
-import { PasswordStrength, PasswordStrengthCode } from 'tai-password-strength';
-import { InputProps, InputRef } from "antd/lib/input";
-import { Rule } from 'antd/lib/form';
+import { PasswordStrength } from 'tai-password-strength';
 
 const PASSWORD_STRENGTH = new PasswordStrength();
 const PASSWORD_STRENGTH_CODE = ['VERY_WEAK', 'WEAK', 'REASONABLE', 'STRONG', 'VERY_STRONG'];
