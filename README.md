@@ -13,9 +13,9 @@
 
 - Drop-in replacement for antd's Input component
 - Customizable
-- Uses [zxcvbn](https://github.com/dropbox/zxcvbn) for password strength estimation
+- Uses [tai-password-strength](https://www.npmjs.com/package/tai-password-strength) for password strength estimation
 
-_Note: zxcvbn is a large library. Use code splitting to only load the library when necessary._
+_Note: tai-password-strength is a rather large library. Use code splitting to only load the library when necessary._
 
 ## Install
 
@@ -53,7 +53,7 @@ With ```Form.create()```:
             required: true,
             message: "Please enter your password"
         }]
-    })(<PasswordInput inputProps={{}} />)}
+    })(<PasswordInput />)}
     </Form.Item>
 </Form>
 ```
@@ -64,13 +64,12 @@ Or with custom settings:
 <Form>
     <Form.Item label="Password">
         <PasswordInput 
-            onChange={this.onChange}
             settings={{
                 height: 5
             }}
-            inputProps={{
-                size: 'large'
-            }}
+            
+            onChange={() => console.log("Changed")}
+            size="large"
         />
     </Form.Item>
 </Form>
@@ -83,8 +82,7 @@ Or with custom settings:
 | props | type  | description |
 | --    | --    | --        |
 | settings | PasswordInputSettings | Strength indicator display settings |
-| onChange | function(e) {} | Input onChange event |
-| inputProps | [InputProps](https://ant.design/components/input/#Input) | Pass additional properties to the underlying [Input](https://ant.design/components/input/) component
+| ...props | [InputProps](https://ant.design/components/input/#Input) | Pass additional properties to the underlying [Input](https://ant.design/components/input/) component
 
 ### PasswordInputSettings
 

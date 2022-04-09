@@ -1,63 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "antd";
-import zxcvbn from "zxcvbn";
-import { InputProps } from "antd/lib/input";
+import { PasswordStrength, PasswordStrengthCode } from 'tai-password-strength';
+import { InputProps, InputRef } from "antd/lib/input";
 
-export class PasswordInput extends React.Component<PasswordInputProps> {
-    public static defaultProps: Partial<PasswordInputProps> = {
-        settings: {
-            colorScheme: {
-                levels: ["#ff4033", "#fe940d", "#ffd908", "#cbe11d", "#6ecc3a"],
-                noLevel: "lightgrey"
-            },
-            height: 3,
-            alwaysVisible: false
-        }
-    };
-
-    state = {
-        level: -1
-    };
-
-    onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
-        const score = value.length == 0 ? -1 : zxcvbn(value).score;
-
-        this.setState({ level: score });
-
-        if (this.props.onChange) {
-            this.props.onChange(e);
-        }
-    };
-
-    render() {
-        const { settings, inputProps, ...rest } = this.props;
-        return (
-            <div>
-                <Input.Password {...inputProps} {...rest} onChange={this.onChange} />
-                <PasswordStrengthIndicator
-                    level={this.state.level}
-                    settings={settings!}
-                />
-            </div>
-        );
-    }
+export interface PasswordInputProps {
+    settings?: PasswordInputSettings;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const PasswordStrengthIndicator = ({ level, settings }: PasswordStrengthIndicatorProps) => {
+// TODO validation
+// TODO test all README examples
+
+const PASSWORD_STRENGTH = new PasswordStrength();
+
+export const PasswordInput = React.forwardRef(({
+    settings = {
+        colorScheme: {
+            levels: ["#ff4033", "#fe940d", "#ffd908", "#cbe11d", "#6ecc3a"],
+            noLevel: "lightgrey"
+        },
+        height: 3,
+        alwaysVisible: false
+    },
+    ...props
+}: PasswordInputProps & Partial<InputProps>, ref: React.Ref<InputRef>) => {
+    const [input, setInput] = useState('')
+
+    return (
+        <>
+            <Input.Password {...props} ref={ref} onChange={(e) => {setInput(e.target.value); props?.onChange?.(e)}} />
+            <PasswordStrengthIndicator
+                input={input}
+                settings={settings}
+            />
+        </>
+    );
+})
+
+interface PasswordStrengthIndicatorProps {
+    input: string;
+    settings: PasswordInputSettings;
+}
+
+export const PasswordStrengthIndicator = ({ input, settings }: PasswordStrengthIndicatorProps) => {
+    // Calculate level
+    const level = React.useMemo(() => {
+        return input.length == 0 ? -1 : Object.keys(PasswordStrengthCode).indexOf(PASSWORD_STRENGTH.check(input).strengthCode);
+    }, [input])
+
     if (!settings.alwaysVisible && level < 0) {
         return null;
     }
 
-    const indicators = [];
+    // Calculate indicators
+    const indicators: React.ReactElement[] = React.useMemo(() => {
+        const ind = [];
+        for (let i = 0; i < 5; i++) {
+            const color =
+                i <= level
+                    ? settings.colorScheme.levels[level]
+                    : settings.colorScheme.noLevel;
+            ind.push(<div key={`indicator-${i}`} style={getIndicatorStyle(color, settings.height)} />);
+        }
 
-    for (let i = 0; i < 5; i++) {
-        const color =
-            i <= level
-                ? settings.colorScheme.levels[level]
-                : settings.colorScheme.noLevel;
-        indicators.push(<div key={`indicator-${i}`} style={getIndicatorStyle(color, settings.height)} />);
-    }
+        return ind;
+    }, [level, settings])
 
     return <div style={getWrapperStyle(settings.height)}>{indicators}</div>;
 };
@@ -78,21 +85,10 @@ function getIndicatorStyle(color: string, height: number) {
     };
 }
 
-export interface PasswordInputProps {
-    settings?: PasswordInputSettings;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    inputProps?: InputProps;
-}
-
 export interface PasswordInputSettings {
     colorScheme: ColorScheme;
     height: number;
     alwaysVisible: boolean;
-}
-
-interface PasswordStrengthIndicatorProps {
-    level: number;
-    settings: PasswordInputSettings;
 }
 
 export interface ColorScheme {

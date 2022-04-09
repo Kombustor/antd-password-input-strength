@@ -1,6 +1,3 @@
 {
-  "extends": [ "tslint-react" ],
-  "rules": {
-    
-  }
+  "extends": [ "tslint-react" ]
 }
