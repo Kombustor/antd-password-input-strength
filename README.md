@@ -35,7 +35,7 @@ _Note: antd and react/react-dom are peer dependencies. You should only use this 
 
 Use as a drop-in replacement for antd's [Input](https://ant.design/components/input/):
 
-```jsx
+```tsx
 <Form>
     <Form.Item label="Password">
         <PasswordInput />
@@ -45,7 +45,7 @@ Use as a drop-in replacement for antd's [Input](https://ant.design/components/in
 
 With ```Form.create()```:
 
-```jsx
+```tsx
 <Form>
     <Form.Item label="Password">
     {this.props.form.getFieldDecorator("password", {
@@ -58,13 +58,14 @@ With ```Form.create()```:
 </Form>
 ```
 
-Or with custom settings:
+With custom settings:
 
-```jsx
+```tsx
 <Form>
     <Form.Item label="Password">
         <PasswordInput 
             settings={{
+                ...defaultSettings,
                 height: 5
             }}
             
@@ -73,6 +74,33 @@ Or with custom settings:
         />
     </Form.Item>
 </Form>
+```
+
+With validation:
+
+```tsx
+function ValidationExample() {
+  const [level, setLevel] = useState(0)
+
+  const minLevel = 1;
+  const errorMessage = 'Password is too weak';
+
+  return (
+    <Form>
+      <Form.Item
+        name="test"
+        rules={[{
+          validator: async () => {
+            return level >= minLevel ? Promise.resolve() : Promise.reject(errorMessage);
+          },
+          message: errorMessage
+        }]}
+      >
+        <PasswordInput onLevelChange={setLevel} />
+      </Form.Item>
+    </Form>
+  );
+}
 ```
 
 ## API
